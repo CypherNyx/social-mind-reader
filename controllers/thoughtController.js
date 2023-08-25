@@ -26,7 +26,7 @@ module.exports = {
     }
   },
   // Creates a new thought. Accepts a request body with the entire Thought object.
-  // Because thoughts are associated with Users, we then update the User who created the app and add the ID of the thought to the thoughts array
+  // Because thoughts are associated with Users, we then update the User who created the thought and add the ID of the thought to the thoughts array
   async createThought(req, res) {
     try {
       const thought = await Thought.create(req.body);
@@ -67,8 +67,8 @@ module.exports = {
       res.status(500).json(err);
     }
   },
-  // Deletes an thought from the database. Looks for an app by ID.
-  // Then if the app exists, we look for any users associated with the app based on he app ID and update the thoughts array for the User.
+  // Deletes an thought from the database. Looks for an thought by ID.
+  // Then if the thought exists, we look for any users associated with the thought based on he thought ID and update the thoughts array for the User.
   async deleteThought(req, res) {
     try {
       const thought = await Thought.findOneAndRemove({ _id: req.params.thoughtId });
@@ -94,12 +94,12 @@ module.exports = {
       res.status(500).json(err);
     }
   },
-  // Adds a tag to an thought. This method is unique in that we add the entire body of the tag rather than the ID with the mongodb $addToSet operator.
-  async addTag(req, res) {
+  // Adds a reaction to an thought. This method is unique in that we add the entire body of the reaction rather than the ID with the mongodb $addToSet operator.
+  async addReaction(req, res) {
     try {
       const thought = await Thought.findOneAndUpdate(
         { _id: req.params.thoughtId },
-        { $addToSet: { tags: req.body } },
+        { $addToSet: { reactions: req.body } },
         { runValidators: true, new: true }
       );
 
@@ -112,12 +112,12 @@ module.exports = {
       res.status(500).json(err);
     }
   },
-  // Remove thought tag. This method finds the thought based on ID. It then updates the tags array associated with the app in question by removing it's tagId from the tags array.
-  async removeTag(req, res) {
+  // Remove thought reaction. This method finds the thought based on ID. It then updates the reactions array associated with the thought in question by removing it's reactionId from the reactions array.
+  async removeReaction(req, res) {
     try {
       const thought = await Thought.findOneAndUpdate(
         { _id: req.params.thoughtId },
-        { $pull: { tags: { tagId: req.params.tagId } } },
+        { $pull: { reactions: { reactionId: req.params.reactionId } } },
         { runValidators: true, new: true }
       );
 
