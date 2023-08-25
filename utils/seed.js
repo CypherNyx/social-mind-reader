@@ -18,7 +18,7 @@ connection.once('open', async () => {
   }
 
   const users = [];
-  const thoughts = getRandomThoughts(15);
+  const thoughts = getRandomThoughts(5);
 
   usernames.forEach((username, i) => {
     const email = emailAddresses[i];
