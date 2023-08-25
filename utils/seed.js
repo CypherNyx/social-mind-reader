@@ -1,6 +1,6 @@
 const connection = require('../config/connection');
 const { User, Thought } = require('../models');
-const { getRandomName, getRandomThoughts } = require('./data');
+const { usernames, emailAddresses, getRandomThoughts } = require('./data');
 
 connection.on('error', (err) => err);
 
@@ -18,19 +18,16 @@ connection.once('open', async () => {
   }
 
   const users = [];
-  const thoughts = getRandomThoughts(10);
+  const thoughts = getRandomThoughts(15);
 
-  for (let i = 0; i < 20; i++) {
-    const fullName = getRandomName();
-    const first = fullName.split(' ')[0];
-    const last = fullName.split(' ')[1];
-
+  usernames.forEach((username, i) => {
+    const email = emailAddresses[i];
     users.push({
-      first,
-      last,
-      age: Math.floor(Math.random() * (99 - 18 + 1) + 18),
+      username, 
+      email,
+      // Add additional user fields here
     });
-  }
+  });
 
   await User.collection.insertMany(users);
   await Thought.collection.insertMany(thoughts);
