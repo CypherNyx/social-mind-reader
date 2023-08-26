@@ -1,5 +1,6 @@
 const { connect, connection } = require('mongoose');
+require('dotenv').config();
 
-connect('mongodb+srv://root:root@cluster0.jnispgn.mongodb.net/socialMindReader');
+connect(process.env.MONGO_URI);
 
 module.exports = connection;
