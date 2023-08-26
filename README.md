@@ -26,7 +26,7 @@ A social network API built with Node.js, Express, MongoDB and Mongoose.Users can
 
 ## Demo
 To see how the API works using Insomnia, see the walk-through demonstration video here: 
-[Link to video Demo ➡️](#)
+[Link to video Demo ➡️](https://drive.google.com/file/d/17B98FBIZAq0RqIjWl96fiyGV8xKmu_v8/view)
 
 
 ## Description 📖
@@ -85,8 +85,8 @@ The following API CRUD routes have been created to **find, create, update, or de
 ### 📁 Reaction Routes
 > /api/reactions
 
-- 👍 Add a reaction:       ```POST /api/thoughts/:id/reactions```
-- 🗑 Delete a reaction:    ```DELETE /api/thoughts/:id/reactions```
+- 👍 Add a reaction:       ```POST /api/thoughts/:thoughtId/reactions```
+- 🗑 Delete a reaction:    ```DELETE /api/thoughts/:thoughtId/reactions/:reactionId```
 
 
 ## Technologies 🛠️: 
