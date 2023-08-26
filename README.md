@@ -46,7 +46,7 @@ To use this API first, you'll need to have Node.js installed on your computer. O
 
 1. Clone this GitHub repository to your local machine. <br> 
 ```sh
-git clone git@github.com:siennameow/social-network-API.git
+git clone https://github.com/CypherNyx/social-mind-reader.git
 ```
 2. Open a terminal or command prompt and navigate to the cloned repository's directory.
 3. Run the install command in your terminal
