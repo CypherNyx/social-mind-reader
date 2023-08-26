@@ -26,7 +26,7 @@ A social network API built with Node.js, Express, MongoDB and Mongoose.Users can
 
 ## Demo
 To see how the API works using Insomnia, see the walk-through demonstration video here: 
-[Link to video Demo ➡️](#)
+[Link to video Demo ➡️](https://drive.google.com/file/d/17B98FBIZAq0RqIjWl96fiyGV8xKmu_v8/view)
 
 
 ## Description 📖
@@ -46,7 +46,7 @@ To use this API first, you'll need to have Node.js installed on your computer. O
 
 1. Clone this GitHub repository to your local machine. <br> 
 ```sh
-git clone git@github.com:siennameow/social-network-API.git
+git clone https://github.com/CypherNyx/social-mind-reader.git
 ```
 2. Open a terminal or command prompt and navigate to the cloned repository's directory.
 3. Run the install command in your terminal
@@ -85,8 +85,8 @@ The following API CRUD routes have been created to **find, create, update, or de
 ### 📁 Reaction Routes
 > /api/reactions
 
-- 👍 Add a reaction:       ```POST /api/thoughts/:id/reactions```
-- 🗑 Delete a reaction:    ```DELETE /api/thoughts/:id/reactions```
+- 👍 Add a reaction:       ```POST /api/thoughts/:thoughtId/reactions```
+- 🗑 Delete a reaction:    ```DELETE /api/thoughts/:thoughtId/reactions/:reactionId```
 
 
 ## Technologies 🛠️: 
