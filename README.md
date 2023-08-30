@@ -58,6 +58,7 @@ npm install
 npm start
 ```
 5. The server will start on port 3001. Routes can be tested in a Insomnia, Postman or the REST client of your choice.
+![insomnia](./assets/Screenshot%202023-08-30%20171037.png)
 
 ## Routes 🛣
 The following API CRUD routes have been created to **find, create, update, or delete** users, friends, thoughts, and reactions in the user's database.
